@@ -1,7 +1,11 @@
 const axios = require('axios');
 
+//create class fetcher
 class Fetcher {
     constructor() { }
+
+    //declare all function
+
 
     Get = async (url) => {
         try {
@@ -58,10 +62,14 @@ class Fetcher {
 const fetch = new Fetcher()
 
 const executeAll = async () => {
+
+    //executing all function
     console.log("performing get")
     var getJsonResponse = await fetch.Get("https://httpbin.org/get");
     console.log("performing delete")
     var deleteJsonResponse = await fetch.Delete("https://httpbin.org/delete?id=1");
+
+    //json Data for param 
     let dataJson ={
         "id": 30,
         "name": "Someone"
@@ -75,4 +83,5 @@ const executeAll = async () => {
 
 }
 
+//execute
 executeAll()
